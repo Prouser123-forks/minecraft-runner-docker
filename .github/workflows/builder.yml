@@ -64,10 +64,6 @@ jobs:
         name: List Available platforms
         run: echo ${{ steps.buildx.outputs.platforms }}
       -
-        # linux/armhf is disabled.
-        # causes error: "/opt/java/openjdk/jmods: Value too large for defined data type"
-        # possibly due to a 32-bit limitation? more research required.
-        # https://github.com/Prouser123/minecraft-runner-docker/runs/762200598
         name: Run Buildx (base-papermc-alpine)
         run: |
           docker buildx build \
